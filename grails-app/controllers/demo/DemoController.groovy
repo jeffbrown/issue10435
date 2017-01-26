@@ -11,7 +11,7 @@ class DemoController {
     def index() {
         String link = '<unknown>'
         def task = Person.async.task {
-            link = grailsLinkGenerator.link(controller: 'demo', action: 'foo', params: [name: 'Jeff'])
+            link = grailsLinkGenerator.link(controller: 'demo', action: 'foo', params: [name: 'Jeff'], absolute: true)
         }
 
         waitAll(task)
